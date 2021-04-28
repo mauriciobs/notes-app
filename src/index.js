@@ -15,10 +15,10 @@ app.engine('.hbs', exphbs({
 	partialsDir: path.join(app.get('views'), 'partials'),
 	extname: '.hbs'
 }));
-app.set('view engine', '.hbs');
+app.set('view engine', '.hbs')
 //Middlewares
-app.use(express.urlencoded({ extended: false }));
-app.use(methodOverride('_method'));
+app.use(express.urlencoded({ extended: false }))
+app.use(methodOverride('_method'))
 app.use(session({
 	secret: 'mysecretapp',
 	resave: true,
@@ -37,4 +37,4 @@ app.use(express.static(path.join(__dirname, 'public')))
 //Server is listening
 app.listen( app.get('port'), () => {
 	console.log('Server on port', app.get('port'));
-});
+})
